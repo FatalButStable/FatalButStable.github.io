@@ -1,429 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Manas</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio">
-    <meta name="author" content="Manas">    
-    <link rel="shortcut icon" href="favicon.ico">  
-    
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
-    
-    <!-- FontAwesome JS -->
-    <script defer src="assets/fontawesome/js/all.js"></script>
-    
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
-    
-    <!-- github calendar css -->
-    <link rel="stylesheet" href="assets/plugins/github-calendar/dist/github-calendar.css">
-    <!-- github activity css -->    
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-    <link rel="stylesheet" href="assets/plugins/github-activity/github-activity-0.1.5.min.css">
-    
-    <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
-
-    
-</head> 
-
+    <title>Manas &mdash; Lead Software Engineer</title>
+    <meta name="description" content="Manas - Lead Software Engineer building travel experiences at scale.">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
 <body>
-    <!-- ******HEADER****** --> 
-    <header class="header">
-        <div class="container clearfix">                       
-            <img class="profile-image img-fluid float-left" src="assets/images/profile2.gif" alt="Manas-Profile" width="175px"/>
-            <div class="profile-content float-left">
-                <h1 class="name">Manas</h1>
-                <h2 class="desc">Full stack developer</h2>   
-                <ul class="social list-inline">
-                    <li class="list-inline-item"><a href="tel:+918892461834"><i class="fas fa-mobile-alt"></i></a></li>
-                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/manas761/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li class="list-inline-item"><a href="https://github.com/manas-github" target="_blank"><i class="fab fa-github-alt"></i></a></li>    
-                    <li class="list-inline-item"><a href="https://stackoverflow.com/users/9521597/manas-singh" target="_blank"><i class="fab fa-stack-overflow"></i></a></li>   
-                    <!-- <li class="list-inline-item last-item"><a href="#"><i class="fab fa-codepen"></i></a></li>                 -->
-                </ul> 
-            </div><!--//profile-->
-            <a class="btn btn-cta-primary float-right" href="mailto:manas.rishav@gmail.com" target="_blank"><i class="fas fa-paper-plane"></i> Contact Me</a>              
-        </div><!--//container-->
-    </header><!--//header-->
-    
-    <div class="container sections-wrapper">
-        <div class="row">
-            <div class="primary col-lg-8 col-12">
-                <section class="about section">
-                    <div class="section-inner">
-                        <h2 class="heading">About Me</h2>
-                        <div class="content">
-                            <p>I'm a polygot software engineer who enjoys learning and developing applications. I'm fascinated by leverage and always looking for opportunities to increase team performance by acting as a force multiplier.
-                                Having worked on mutiple projects since 2017, I'm excited by new opportunities for the technology to empower human collaboration. 
-                            </p>
-                            <p>
-                                My ability to adapt and quickly learning makes me excellent at bridging business requirements with modern technology.  I've got a degree in Information Science & Engineering from BMS College of Engineering in 2019 and am comfortable at all levels of the full stack development.
-                            </p>
-                         
-                        </div><!--//content-->
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->
-    
-                <section class="experience section">
-                    <div class="section-inner">
-                        <h2 class="heading">Work Experience</h2>
-                        <div class="content">
-                           <div class="item">
-                                <h3 class="title">Software Engineer - <span class="place"><a href="#">Wissen Technology</a></span> <span class="year">(June,2019 - Present)</span></h3>
-                                
-                                <ul>
-                                    <li>
-                                        Developing a cross platform mobile application UI for employee
-and client management.
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>Developed backend application for trading application with automatic
-                                        purchase and redeeming features.</li>
-                                    <li>Setup test driven development and automated deployment in
-                                        the project to improve system's stability and early identification of
-                                        bugs which would have led to production issues.</li>
-                                </ul> 
-                                <br/>
-                                <ul>
-                                    <li>Worked on data sourcing project and created modules for sourcing and validation of data from different data sources.</li>
-                                    <li>Implemented data transformation module to achieve uniform data from different data sources.</li> 
-                                </ul> 
-                                <br>
-                                <ul>
-                                    <li>Developed an interview management system to ease the process of interviewing and tracking candidates.</li>
-                                    <li> I was responsible
-                                        for the entire front end and back end system.</li> 
-                                </ul> 
-                                <br>
-                                <ul>
-                                    <li>Technologies : Java, Spring boot, Hibernate, Angular, React Native, TypeScript, MySQL, MongoDB, Kafka, Jenkins, Git</li>
-                                </ul>
+    <canvas id="particles"></canvas>
 
-
-                                </p>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title">Software Engineer Intern- <span class="place"><a href="#">Wissen Technology</a></span> <span class="year">(Jan,2019 - April,2019)</span></h3>
-                                <ul>
-                                    <li>Worked on the interactive learning application project.</li>
-                                    <li>Developed the modules for speaker recognition and emotional analysis of audio using external Api's.</li>
-                                    <li>Technologies : Python, React Native.</li>
-                                </ul>
-                            </div><!--//item-->
-                            
-                            <div class="item">
-                                <h3 class="title">React developer intern - <span class="place"><a href="#">Voorent</a></span> <span class="year">(May,2018 - July,2018)</span></h3>
-                                <ul>
-                                    <li>Developed the front end of the website <a href="https://www.voorent.com">Voorent</a></li>
-                                    <li>Worked on improving page speed and page load time.</li> 
-                                    <li>Implemented route based code splitting and progressive pagehydration.</li>
-                                    <li>Technologies : ReactJS, TypeScript, MobX, HTML, CSS</li>
-                                </ul>
-                            </div><!--//item-->
-                            
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->
-                
-               <section class="latest section">
-                    <div class="section-inner">
-                        <h2 class="heading">Latest Projects</h2>
-                        <div class="content">    
-                                               
-                            <div class="item featured text-center">
-                                <h3 class="title"><a href="https://github.com/manas-github/rental-app" target="_blank">Rental application</a></h3>
-                                <p class="summary">A cross-platform (iOS & Android) e- commerce mobile application to facilitate the process of renting furniture. This project has been developed using React native, TypeScript, MobX and CSS..</p>
-                                <div class="featured-image has-ribbon">
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <img class="img-fluid project-image d-none d-lg-block" src="assets/images/login.jpeg" alt="project name" />
-                                        </div>
-                                        <div class="col-sm">
-                                            <img class="img-fluid project-image" src="assets/images/WhatsApp Image 2019-12-27 at 3.07.27 PM.jpeg" alt="project name" />
-                                        </div>
-                                        <div class="col-sm">
-                                            <img class="img-fluid project-image d-none d-lg-block" src="assets/images/prodpage.jpeg" alt="project name" />
-                                        </div>
-                                      </div>
-
-                                </div>
-                                    
-                                <div class="desc text-left">                                    
-                                    <!-- <p>To be populated soon.</p> -->
-                                </div><!--//desc-->         
-                                <a class="btn btn-cta-secondary" href="https://github.com/manas-github/rental-app" target="_blank"><i class="fas fa-thumbs-up"></i>Visit Github repository</a>                 
-                            </div><!--//item-->
-                            <hr class="divider" />
-                            <div class="item row">
-                                <a class="col-md-4 col-12" href="https://github.com/manas-github/rental-serverapp-springboot" target="_blank">
-                                <img class="img-fluid project-image" src="https://cdn.lynda.com/course/731736/731736-637074672660539149-16x9.jpg" alt="project name" />
-                                </a>
-                                <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="https://github.com/manas-github/rental-serverapp-springboot" target="_blank">Rental application server ( backend application)</a></h3>
-                                    <p class="mb-2">A complete back end server application developed to provide service for my other project (rental app). This application has been developed using Spring boot and hiberate and deployed on heroku.</p>
-                                    <p><a class="more-link" href="https://github.com/manas-github/rental-serverapp-springboot" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more.</a></p>
-                                </div><!--//desc-->                          
-                            </div><!--//item-->
-
-                            <div class="item row">
-                                <a class="col-md-4 col-12" href="https://github.com/manas-github/weather-app target="_blank">
-                                <img class="img-fluid project-image" src="data:image/jpeg;base64,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" alt="project name" />
-                                </a>
-                                <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="https://github.com/manas-github/weather-app" target="_blank">Weather application.</a></h3>
-                                    <p class="mb-2">A simple web application which retrieves the weather information for any city.</p>
-                                    <p><a class="more-link" href="https://github.com/manas-github/weather-app" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more.</a></p>
-                                </div><!--//desc-->                          
-                            </div><!--//item-->
-
-                            <div class="item row">
-                                <a class="col-md-4 col-12" href="https://github.com/manas-github/library-management" target="_blank">
-                                <img class="img-fluid project-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlPXXJpwxzJb1d3FYWhYSa3OKLYrMW2fh6JgXh44DmZ6pwPcPC&s" alt="project name" />
-                                </a>
-                                <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="https://github.com/manas-github/library-management" target="_blank">Library management system</a></h3>
-                                    <p class="mb-2">A simple web application developed as a part of academics which would make searching, reserving and returning of books easier for students specific to their needs and prepare reports on usage .</p>
-                                    <p><a class="more-link" href="https://github.com/manas-github/library-management" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more.</a></p>
-                                </div><!--//desc-->                          
-                            </div><!--//item-->
-                                                                            
-                            
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                
-                </section><!--//section-->
-                
-                <section class="projects section">
-                    <div class="section-inner">
-                        <h2 class="heading">Blogs</h2>
-                        <div class="content">
-                            <div class="item">
-                                <h3 class="title"><a href="https://medium.com/@manas.rishav/easy-way-to-keep-the-free-tier-heroku-app-alive-fcb7dcf72139" target="_blank">Easy way to keep the free tier Heroku app alive</a> <span class="badge badge-theme"></span></h3>
-                                <p class="summary">A simple way to keep the Heroku app hosted on server and prevent it from going to sleep status forever. Also, monitor the uptime and response time of application and subscribe to get alerts.</p>
-                                <p><a class="more-link" href="https://medium.com/@manas.rishav/easy-way-to-keep-the-free-tier-heroku-app-alive-fcb7dcf72139" target="_blank"><i class="fas fa-external-link-alt"></i>Read more here.</a></p>
-                            </div><!--//item-->
-
-                            
-                            <a class="btn btn-cta-secondary" href="https://medium.com/@manas.rishav">More on medium <i class="fas fa-chevron-right"></i></a>
-                            
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->
-                
-               
-
-            </div><!--//primary-->
-            <div class="secondary col-lg-4 col-12">
-                 <aside class="info aside section">
-                    <div class="section-inner">
-                        <h2 class="heading sr-only">Basic Information</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>Bengaluru, India</li>
-                                <li><i class="fas fa-envelope"></i><span class="sr-only">Email:</span><a href="mailto:manas.rishav@gmail.com" target="_blank">manas.rishav@gmail.com</a></li>
-                                <li><i class="fas fa-phone-alt"></i><span class="sr-only">Website:</span><a href="tel:+91 8892461834" target="_blank">+91 8892461834</a></li>
-                            </ul>
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </aside><!--//aside-->
-                
-                <aside class="skills aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Skills</h2>
-                        <div class="content">
-                            <p class="intro">
-                            <div class="skillset">
-                                Front end <br><br>
-                                <div class="item">
-                                    <h3 class="level-title">React<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="1.5 years"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="85%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                <div class="item">
-                                    <h3 class="level-title">React native<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="6 months"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="80%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                <div class="item">
-                                    <h3 class="level-title">Angular<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="6 months"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="70%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                <div class="item">
-                                    <h3 class="level-title">Javascript & Typescript<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="2 years"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="80%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                <div class="item">
-                                    <h3 class="level-title">CSS<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="3 years"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="80%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                            </div> 
-                            <div class="skillset">
-                                Back end <br><br>
-                                <div class="item">
-                                    <h3 class="level-title">Spring &amp; Spring boot<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="1 year"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="80%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                <div class="item">
-                                    <h3 class="level-title">Hibernate<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="6 months"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="85%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->                                <div class="item">
-                                    <h3 class="level-title">Java<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="3 years"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="90%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item--> 
-                                
-                            </div> 
-                            <div class="skillset">
-                                Database <br><br>
-                                <div class="item">
-                                    <h3 class="level-title">MySQL<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="2 years"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="85%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                <div class="item">
-                                    <h3 class="level-title">Oracle<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="1 year"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="85%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                
-                            </div>  
-                            <div class="skillset">
-                                More <br><br>
-                                <div class="item">
-                                    <h3 class="level-title">Kafka<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="2 years"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="81%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                <div class="item">
-                                    <h3 class="level-title">Git<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="1 year"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="99%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->                                 
-                                </div><!--//item-->
-                                <div class="item">
-                                    <h3 class="level-title">Jenkins<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="1 year"><i class="fas fa-info-circle"></i></span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="83%">
-                                        </div>                                      
-                                    </div><!--//level-bar-->     
-                                
-                            </div>              
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </aside><!--//section-->
-                
-
-                
-                <aside class="education aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Education</h2>
-                        <div class="content">
-                            <div class="item">                      
-                                <h3 class="title"><i class="fas fa-graduation-cap"></i> BMS college of Engineering</h3>
-                                <h4 class="university">Information science &amp; engineering <span class="year">(2015-2019)</span></h4>
-                                <h4 class="university">CGPA : <span class="year">8.71</span></h4>
-
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title"><i class="fas fa-graduation-cap"></i> Devasthali vidyapeeth</h3>
-                                <h4 class="university">CBSE <span class="year">(2012-2014)</span></h4>
-                                <h4 class="university">Aggregate : <span class="year">88.80 &percnt;</span></h4>
-
-                            </div><!--//item-->
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-                            
-                <aside class="languages aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Languages</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li class="item">
-                                    <span class="title"><strong>Hindi:</strong></span>
-                                    <span class="level">Native Speaker <br class="visible-xs"/><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span>
-                                </li><!--//item-->
-                                <li class="item">
-                                    <span class="title"><strong>English:</strong></span>
-                                    <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half"></i></span>
-                                </li><!--//item-->
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-                
-
-                
-                <!-- <aside class="list music aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Favourite coding music</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-headphones"></i> <a href="#">To be populated soon</a></li>
-                                <li><i class="fas fa-headphones"></i> <a href="#">To be populated soon</a></li>
-                                <li><i class="fas fa-headphones"></i> <a href="#">To be populated soon</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </aside> -->
-                
-               
-              
-            </div><!--//secondary-->    
-        </div><!--//row-->
-    </div><!--//masonry-->
-    
-    <footer class="footer">
-        <div class="container text-center">
-                <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="" target="_blank">Manas</a></small>
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo">M.</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
         </div>
-    </footer>
- 
-    <!-- Javascript -->          
-    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/popper.min.js"></script> 
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
-    <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script> 
-    <!-- github calendar plugin -->
-    <script type="text/javascript" src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
-    <!-- github activity plugin -->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/github-activity/github-activity-0.1.5.min.js"></script>
-    <!-- custom js -->
-    <script type="text/javascript" src="assets/js/main.js"></script>            
-</body>
-</html> 
+    </nav>
 
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <p class="hero-greeting fade-up">Hi, my name is</p>
+                <h1 class="hero-name fade-up">Manas.</h1>
+                <h2 class="hero-tagline fade-up">I build things for the internet.</h2>
+                <p class="hero-description fade-up">
+                    Lead Software Engineer crafting scalable systems that power
+                    travel experiences for millions of users worldwide.
+                </p>
+                <a href="#contact" class="hero-cta fade-up">Get in touch</a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section" id="about">
+            <h2 class="section-heading fade-up"><span class="section-number">01.</span> About Me</h2>
+            <div class="about-content">
+                <div class="about-text fade-up">
+                    <p>
+                        I'm a software engineer who loves building robust, high-performance
+                        backend systems. Currently, I'm a <span class="highlight">Lead Software Engineer at
+                        Headout</span>, where I work on the core platform powering one of the
+                        world's largest experiences marketplace.
+                    </p>
+                    <p>
+                        I've been writing code professionally since 2019 and have worked
+                        across the full stack &mdash; from mobile apps to distributed backend
+                        services. I enjoy solving complex problems at scale, whether it's
+                        designing resilient APIs, optimizing database performance, or
+                        building systems that handle millions of requests.
+                    </p>
+                    <p>
+                        I graduated with a degree in <span class="highlight">Information Science &amp; Engineering</span>
+                        from BMS College of Engineering, Bengaluru.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section" id="experience">
+            <h2 class="section-heading fade-up"><span class="section-number">02.</span> Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3>Lead Software Engineer</h3>
+                            <span class="timeline-company">@ Headout</span>
+                        </div>
+                        <span class="timeline-date">2021 &mdash; Present</span>
+                        <ul class="timeline-details">
+                            <li>Lead engineering efforts on the core backend platform serving user-facing APIs consumed by all clients</li>
+                            <li>Design and build scalable systems handling products, inventory, bookings, and cancellations for millions of users</li>
+                            <li>Drive architectural decisions and mentor engineers across the team</li>
+                            <li>Work with Kotlin, Spring Boot, jOOQ, Kafka, Kubernetes, and MySQL at scale</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3>Software Engineer</h3>
+                            <span class="timeline-company">@ Wissen Technology</span>
+                        </div>
+                        <span class="timeline-date">June 2019 &mdash; 2021</span>
+                        <ul class="timeline-details">
+                            <li>Built backend services for trading applications with auto-purchase and redemption logic</li>
+                            <li>Developed cross-platform mobile applications and full-stack interview management systems</li>
+                            <li>Created data sourcing, validation, and transformation modules</li>
+                            <li>Worked with Java, Spring Boot, Hibernate, React Native, Angular, Kafka, and MongoDB</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section" id="skills">
+            <h2 class="section-heading fade-up"><span class="section-number">03.</span> Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category fade-up">
+                    <h3 class="skill-category-title">Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Kotlin</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">jOOQ</span>
+                        <span class="skill-tag">Hibernate</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">gRPC</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-up">
+                    <h3 class="skill-category-title">Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kafka</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Gradle</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-up">
+                    <h3 class="skill-category-title">Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">BigQuery</span>
+                    </div>
+                </div>
+                <div class="skill-category fade-up">
+                    <h3 class="skill-category-title">Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section section-contact" id="contact">
+            <h2 class="section-heading fade-up"><span class="section-number">04.</span> Get In Touch</h2>
+            <div class="contact-content fade-up">
+                <p>
+                    I'm always open to interesting conversations, new opportunities,
+                    or just a friendly hello. Feel free to reach out!
+                </p>
+                <a href="mailto:manas.rishav@gmail.com" class="contact-btn">Say Hello</a>
+                <div class="social-links">
+                    <a href="https://github.com/FatalButStable" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/manas761/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="mailto:manas.rishav@gmail.com" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Built by Manas</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
