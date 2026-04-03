@@ -1619,10 +1619,11 @@ button { cursor: none; }
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
     .hero {
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: center;
         text-align: center;
-        gap: 2.5rem;
+        gap: 2rem;
+        padding-top: 7rem;
     }
 
     .hero-content { max-width: 100%; }
@@ -1677,7 +1678,9 @@ button { cursor: none; }
     }
 
     .hero {
-        padding: 0 1.5rem;
+        padding: 6rem 1.5rem 2rem;
+        min-height: 100vh;
+        min-height: 100dvh;
     }
 
     .hero-scroll { display: none; }
