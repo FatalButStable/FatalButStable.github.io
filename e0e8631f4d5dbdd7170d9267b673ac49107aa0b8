@@ -1,0 +1,24 @@
+assets/css/styles.css
+  4dbda6f48ce79e98 280,284-287,341-343
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.5",
+  "base_commit_sha": "e0e8631f4d5dbdd7170d9267b673ac49107aa0b8",
+  "prompts": {
+    "4dbda6f48ce79e98": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8843e52d-7391-485c-af1b-977439f48b1d",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "minus",
+      "messages": [],
+      "total_additions": 10,
+      "total_deletions": 5,
+      "accepted_lines": 10,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/c98879ac86df65b10ab2a86bf1bf65956f81a180a3f879ee22777869309ab019"
+    }
+  }
+}
