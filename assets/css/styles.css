@@ -354,6 +354,9 @@ button { cursor: none; }
 
 .lang-active {
     font-weight: 500;
+    display: inline-block;
+    width: 1.6em;
+    text-align: center;
 }
 
 /* Language Dropdown */
