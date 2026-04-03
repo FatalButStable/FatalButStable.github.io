@@ -1,0 +1,24 @@
+index.html
+  4dbda6f48ce79e98 49-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.5",
+  "base_commit_sha": "eeeefc4549f07f294c3523941e30ede726a63811",
+  "prompts": {
+    "4dbda6f48ce79e98": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8843e52d-7391-485c-af1b-977439f48b1d",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "minus",
+      "messages": [],
+      "total_additions": 4,
+      "total_deletions": 8,
+      "accepted_lines": 3,
+      "overriden_lines": 0,
+      "messages_url": "https://usegitai.com/cas/872cf6be68213438ad2c1e104ab438997b6cb5b62c46de0eb98fab06222529af"
+    }
+  }
+}
