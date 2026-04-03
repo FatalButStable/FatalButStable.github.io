@@ -493,13 +493,24 @@ document.querySelectorAll('.stat-number').forEach((el) => statObserver.observe(e
 })();
 
 // ============================================
-// GitHub Contribution Graph
+// GitHub Contribution Graph (lazy-loaded)
 // ============================================
 (() => {
     const container = document.getElementById('github-graph');
     const totalEl = document.getElementById('github-total');
     if (!container) return;
 
+    let loaded = false;
+    const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting && !loaded) {
+            loaded = true;
+            observer.disconnect();
+            loadGraph();
+        }
+    }, { rootMargin: '200px' });
+    observer.observe(container);
+
+    function loadGraph() {
     fetch('https://github-contributions-api.jogruber.de/v4/blame-the-agent?y=last')
         .then((r) => r.json())
         .then((data) => {
@@ -565,13 +576,27 @@ document.querySelectorAll('.stat-number').forEach((el) => statObserver.observe(e
         .catch(() => {
             container.innerHTML = '<div class="github-loading">Failed to load contributions</div>';
         });
+    }
 })();
 
 // ============================================
-// Footer: Last Updated + Visit Counter
+// Footer: Last Updated + Visit Counter (lazy-loaded)
 // ============================================
 (() => {
-    // Last updated from GitHub API
+    const footer = document.querySelector('.footer');
+    if (!footer) return;
+
+    let loaded = false;
+    const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting && !loaded) {
+            loaded = true;
+            observer.disconnect();
+            loadFooterData();
+        }
+    }, { rootMargin: '300px' });
+    observer.observe(footer);
+
+    function loadFooterData() {
     const updatedEl = document.getElementById('last-updated');
     if (updatedEl) {
         fetch('https://api.github.com/repos/FatalButStable/FatalButStable.github.io/commits?per_page=1')
@@ -598,6 +623,7 @@ document.querySelectorAll('.stat-number').forEach((el) => statObserver.observe(e
                 }
             })
             .catch(() => {});
+    }
     }
 })();
 
