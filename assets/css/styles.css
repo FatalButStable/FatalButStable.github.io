@@ -295,14 +295,77 @@ button { cursor: none; }
 }
 
 .nav-logo {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--heading);
-    transition: color 0.3s ease;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    position: relative;
+    color: var(--accent-1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.nav-logo:hover { color: var(--accent-1); }
+.logo-avatar {
+    width: 0;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid rgba(139, 92, 246, 0.4);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav.scrolled .logo-avatar {
+    width: 28px;
+    opacity: 1;
+}
+
+.logo-text {
+    display: inline-block;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    font-size: 1.2rem;
+}
+
+.logo-text.swapping {
+    opacity: 0;
+    transform: translateY(-6px);
+}
+
+.nav:not(.scrolled) .logo-text {
+    animation: sparkle-pulse 2s ease-in-out infinite;
+}
+
+.nav.scrolled .logo-text {
+    font-size: 1.8rem;
+    animation: none;
+}
+
+@keyframes sparkle-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+.nav-logo::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, var(--accent-1), transparent);
+    opacity: 0.4;
+    transform: scaleX(0.6);
+    transform-origin: left;
+    transition: all 0.4s ease;
+}
+
+.nav-logo:hover::after {
+    transform: scaleX(1);
+    opacity: 0.8;
+}
 }
 
 .nav-links a {

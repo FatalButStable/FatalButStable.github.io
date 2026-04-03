@@ -454,15 +454,40 @@ document.querySelectorAll('.stat-number').forEach((el) => statObserver.observe(e
 })();
 
 // ============================================
-// Nav Scroll Effect
+// Nav Scroll Effect + Logo Swap
 // ============================================
 (() => {
     const nav = document.getElementById('nav');
+    const logoText = document.querySelector('.logo-text');
+    let isExpanded = false;
+    let swapping = false;
+
+    function swapTo(text) {
+        if (swapping) return;
+        swapping = true;
+        logoText.classList.add('swapping');
+        setTimeout(() => {
+            logoText.textContent = text;
+            logoText.classList.remove('swapping');
+            setTimeout(() => { swapping = false; }, 250);
+        }, 250);
+    }
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 80) {
+        const trigger = window.innerHeight * 0.5;
+
+        if (window.scrollY > trigger) {
             nav.classList.add('scrolled');
+            if (!isExpanded) {
+                swapTo('Manas');
+                isExpanded = true;
+            }
         } else {
             nav.classList.remove('scrolled');
+            if (isExpanded) {
+                swapTo('✦');
+                isExpanded = false;
+            }
         }
     });
 })();
