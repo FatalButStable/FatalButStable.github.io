@@ -468,6 +468,81 @@ document.querySelectorAll('.stat-number').forEach((el) => statObserver.observe(e
 })();
 
 // ============================================
+// GitHub Contribution Graph
+// ============================================
+(() => {
+    const container = document.getElementById('github-graph');
+    const totalEl = document.getElementById('github-total');
+    if (!container) return;
+
+    fetch('https://github-contributions-api.jogruber.de/v4/blame-the-agent?y=last')
+        .then((r) => r.json())
+        .then((data) => {
+            // Animate total count
+            const total = data.total?.lastYear || 0;
+            let count = 0;
+            const inc = total / 50;
+            const timer = setInterval(() => {
+                count += inc;
+                if (count >= total) { count = total; clearInterval(timer); }
+                totalEl.textContent = Math.floor(count).toLocaleString();
+            }, 25);
+
+            // Build grid
+            const contributions = data.contributions || [];
+            const grid = document.createElement('div');
+            grid.className = 'gh-grid';
+
+            // Group by weeks
+            let week = document.createElement('div');
+            week.className = 'gh-week';
+
+            // Pad first week
+            const firstDay = new Date(contributions[0]?.date).getDay();
+            for (let i = 0; i < firstDay; i++) {
+                const empty = document.createElement('div');
+                empty.className = 'gh-cell';
+                empty.style.visibility = 'hidden';
+                week.appendChild(empty);
+            }
+
+            contributions.forEach((day, i) => {
+                const cell = document.createElement('div');
+                cell.className = 'gh-cell';
+                cell.setAttribute('data-level', day.level);
+
+                // Tooltip
+                const tooltip = document.createElement('span');
+                tooltip.className = 'gh-tooltip';
+                const date = new Date(day.date);
+                const formatted = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                tooltip.textContent = day.count === 0
+                    ? `No contributions on ${formatted}`
+                    : `${day.count} contribution${day.count > 1 ? 's' : ''} on ${formatted}`;
+                cell.appendChild(tooltip);
+
+                week.appendChild(cell);
+
+                const dayOfWeek = new Date(day.date).getDay();
+                if (dayOfWeek === 6) {
+                    grid.appendChild(week);
+                    week = document.createElement('div');
+                    week.className = 'gh-week';
+                }
+            });
+
+            // Append remaining
+            if (week.children.length > 0) grid.appendChild(week);
+
+            container.innerHTML = '';
+            container.appendChild(grid);
+        })
+        .catch(() => {
+            container.innerHTML = '<div class="github-loading">Failed to load contributions</div>';
+        });
+})();
+
+// ============================================
 // Footer: Last Updated + Visit Counter
 // ============================================
 (() => {
