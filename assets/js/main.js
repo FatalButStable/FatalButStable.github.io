@@ -1,113 +1,108 @@
 // ============================================
-// Particle Starfield
+// Loading Screen
 // ============================================
-(function () {
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    let mouse = { x: null, y: null };
-    const PARTICLE_COUNT = 80;
-    const CONNECT_DISTANCE = 140;
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.getElementById('loader').classList.add('done');
+        initHeroAnimations();
+    }, 1200);
+});
 
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+// ============================================
+// Custom Cursor
+// ============================================
+(() => {
+    const cursor = document.getElementById('cursor');
+    const follower = document.getElementById('cursor-follower');
+    if (!cursor || !follower) return;
+
+    let cx = 0, cy = 0;
+    let fx = 0, fy = 0;
+    let mouseX = 0, mouseY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateCursor() {
+        cx += (mouseX - cx) * 0.2;
+        cy += (mouseY - cy) * 0.2;
+        fx += (mouseX - fx) * 0.08;
+        fy += (mouseY - fy) * 0.08;
+
+        cursor.style.left = cx + 'px';
+        cursor.style.top = cy + 'px';
+        follower.style.left = fx + 'px';
+        follower.style.top = fy + 'px';
+
+        requestAnimationFrame(animateCursor);
     }
+    animateCursor();
 
-    function createParticles() {
-        particles = [];
-        for (let i = 0; i < PARTICLE_COUNT; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.4,
-                vy: (Math.random() - 0.5) * 0.4,
-                radius: Math.random() * 1.5 + 0.5,
-                opacity: Math.random() * 0.5 + 0.2
-            });
-        }
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        particles.forEach((p) => {
-            p.x += p.vx;
-            p.y += p.vy;
-
-            if (p.x < 0) p.x = canvas.width;
-            if (p.x > canvas.width) p.x = 0;
-            if (p.y < 0) p.y = canvas.height;
-            if (p.y > canvas.height) p.y = 0;
-
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(167, 139, 250, ${p.opacity})`;
-            ctx.fill();
+    // Hover states
+    const interactives = document.querySelectorAll('a, button, .btn, .tilt-card, .marquee-item');
+    interactives.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+            follower.classList.add('hover');
         });
-
-        // Draw connections
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-
-                if (dist < CONNECT_DISTANCE) {
-                    const opacity = (1 - dist / CONNECT_DISTANCE) * 0.12;
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(167, 139, 250, ${opacity})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.stroke();
-                }
-            }
-
-            // Mouse interaction
-            if (mouse.x !== null) {
-                const dx = particles[i].x - mouse.x;
-                const dy = particles[i].y - mouse.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 180) {
-                    const opacity = (1 - dist / 180) * 0.2;
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(mouse.x, mouse.y);
-                    ctx.strokeStyle = `rgba(34, 211, 238, ${opacity})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.stroke();
-                }
-            }
-        }
-
-        requestAnimationFrame(animate);
-    }
-
-    window.addEventListener('resize', () => {
-        resize();
-        createParticles();
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+            follower.classList.remove('hover');
+        });
     });
-
-    window.addEventListener('mousemove', (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
-
-    window.addEventListener('mouseout', () => {
-        mouse.x = null;
-        mouse.y = null;
-    });
-
-    resize();
-    createParticles();
-    animate();
 })();
 
 // ============================================
-// Scroll-triggered fade-up animations
+// Magnetic Elements
 // ============================================
-const observer = new IntersectionObserver(
+(() => {
+    const magnetics = document.querySelectorAll('.magnetic');
+
+    magnetics.forEach((el) => {
+        const strength = parseFloat(el.dataset.strength) || 15;
+
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            el.style.transform = `translate(${x / strength * 2}px, ${y / strength * 2}px)`;
+        });
+
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = 'translate(0, 0)';
+            el.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+            setTimeout(() => { el.style.transition = ''; }, 400);
+        });
+    });
+})();
+
+// ============================================
+// Hero Animations
+// ============================================
+function initHeroAnimations() {
+    // Reveal text
+    document.querySelectorAll('.hero .reveal-text').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), 200 + i * 150);
+    });
+
+    // Character animation
+    document.querySelectorAll('.hero-name .char').forEach((char, i) => {
+        setTimeout(() => char.classList.add('visible'), 300 + i * 60);
+    });
+
+    // Fade ups in hero
+    document.querySelectorAll('.hero .fade-up').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), 800 + i * 150);
+    });
+}
+
+// ============================================
+// Scroll-triggered Animations
+// ============================================
+const fadeObserver = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -115,41 +110,128 @@ const observer = new IntersectionObserver(
             }
         });
     },
-    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
 );
 
-document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+// Only observe elements NOT in hero (hero is handled separately)
+document.querySelectorAll('.section .fade-up, .footer.fade-up').forEach((el) => {
+    fadeObserver.observe(el);
+});
 
-// Trigger hero animations immediately
-window.addEventListener('load', () => {
-    document.querySelectorAll('.hero .fade-up').forEach((el) => {
-        el.classList.add('visible');
+// Reveal text in sections
+document.querySelectorAll('.section .reveal-text').forEach((el) => {
+    fadeObserver.observe(el);
+});
+
+// ============================================
+// Stat Counter Animation
+// ============================================
+const statObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.count);
+                const prefix = el.dataset.prefix || '';
+                const suffix = el.dataset.suffix || '';
+                let current = 0;
+                const increment = target / 40;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = prefix + Math.floor(current) + suffix;
+                }, 30);
+                statObserver.unobserve(el);
+            }
+        });
+    },
+    { threshold: 0.5 }
+);
+
+document.querySelectorAll('.stat-number').forEach((el) => statObserver.observe(el));
+
+// ============================================
+// 3D Tilt Cards
+// ============================================
+(() => {
+    const cards = document.querySelectorAll('.tilt-card');
+
+    cards.forEach((card) => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+            card.style.transform = `perspective(800px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) scale3d(1.02, 1.02, 1.02)`;
+
+            // Update glow position for exp cards
+            const glow = card.querySelector('.exp-card-glow');
+            if (glow) {
+                glow.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+                glow.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+            }
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(800px) rotateY(0) rotateX(0) scale3d(1, 1, 1)';
+            card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+            setTimeout(() => { card.style.transition = ''; }, 500);
+        });
     });
-});
+})();
 
 // ============================================
-// Nav scroll effect
+// Side Nav Active State
 // ============================================
-const nav = document.getElementById('nav');
-let lastScroll = 0;
+(() => {
+    const sections = document.querySelectorAll('section[id]');
+    const dots = document.querySelectorAll('.side-dot');
 
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (scrollY > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-    lastScroll = scrollY;
-});
+    const sectionObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    dots.forEach((d) => d.classList.remove('active'));
+                    const activeDot = document.querySelector(`.side-dot[data-section="${entry.target.id}"]`);
+                    if (activeDot) activeDot.classList.add('active');
+                }
+            });
+        },
+        { threshold: 0.3, rootMargin: '-10% 0px -60% 0px' }
+    );
+
+    sections.forEach((s) => sectionObserver.observe(s));
+})();
 
 // ============================================
-// Smooth scroll for nav links
+// Nav Scroll Effect
+// ============================================
+(() => {
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+})();
+
+// ============================================
+// Smooth Scroll
 // ============================================
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        if (href === '#') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+        const target = document.querySelector(href);
         if (target) {
             target.scrollIntoView({ behavior: 'smooth' });
         }
