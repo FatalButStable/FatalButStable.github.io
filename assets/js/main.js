@@ -612,14 +612,14 @@ document.querySelectorAll('.stat-number').forEach((el) => statObserver.observe(e
             .catch(() => {});
     }
 
-    // Visit counter via counterapi v1
+    // Visit counter via abacus.jasoncameron.dev
     const countEl = document.getElementById('visit-count');
     if (countEl) {
-        fetch('https://api.counterapi.dev/v1/manas-wtf/portfolio/up')
+        fetch('https://abacus.jasoncameron.dev/hit/manas-wtf/portfolio')
             .then((r) => r.json())
             .then((data) => {
-                if (data.count) {
-                    countEl.textContent = data.count.toLocaleString() + ' visits';
+                if (data.value) {
+                    countEl.textContent = data.value.toLocaleString() + ' visits';
                 }
             })
             .catch(() => {});
